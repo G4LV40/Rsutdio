@@ -1,0 +1,162 @@
+
+############  Basic stats on Rstudio ##########---------------------------------------
+#### Tipo de dados  ####
+
+#Num�rico
+x=30
+x
+
+#Caracter
+frase="Aprendendo R"
+frase
+
+#complexo
+y=5+4i
+y
+
+
+#### R como uma calculadora  ####----------------------------------------------
+#Exemplos
+x=10
+y=15
+
+soma= x+y
+soma
+
+dif= x-y
+dif
+
+prod=x*y
+prod
+
+div=x/y
+div
+
+########## Fun��es b�sicas #######----------------------------------------------
+
+# Atribui��o e armazenamento de vetor em objeto
+X<-c(1,2,31,54,8)
+x 
+# *Case sensitive
+X
+# Valor absoluto
+abs(-10); abs(-1000)
+
+# Logar�timo de x na base a 
+log(9,3)
+ 
+# Logar�timo natural (neperiano, base 1/e)
+log(100)
+
+# Logaritimo de x na base 10
+log10(10)
+
+# Exponencial
+exp(3)
+
+# Trigonom�tricos (Seno,Cosseno e Tangente)
+sin(0)
+cos(0)
+tan(0)
+
+# Arredendamento de objetos x com n decimais
+round(12.2531145, 2)
+
+# Primeiro inteiro superior
+ceiling(12.458795)
+
+# Primeiro inteiro inferior
+floor(12.456868)
+
+# Comprimento de vetores e objetos
+length(100)
+x<-c(1,2,31,54,8)
+length(x)
+
+# Somat�ria
+sum(x)
+
+# Produt�ria
+prod(x)
+
+# Valor m�ximo de vetor ou objeto
+max(x)
+
+# Valor m�nimo de vetor ou objeto
+min(x)
+
+# Amplitude dos dados (seleciona o menor e o maior valor)
+range(x)
+
+# raizes n�o definidas, n�meros complexos e NA, NAN
+sqrt(-17)
+sqrt(-17+0i)
+
+### cria��o e manipula��o de vetores##------------------------------------------
+#Uso de vetores, o termo "c" ser� uma forma de organizar os dados 
+# na sequ�ncia em que s�o anunciados (concate)
+
+vetorx<- c(1,2,3,4,5,6,7,8,9,10)
+vetorx
+length(vetorx)
+
+# cria��o de String (n�o-num�rico)
+vetory<-c("a","e","i","o","u")
+vetory
+length(vetory)
+
+#verifica��o da condi��o do vetor:
+is.numeric(vetorx)
+is.numeric(vetory)
+
+is.character(vetorx)
+is.character(vetory)
+
+#Criando vetores (n=10) com o comando seq 
+x<-(1:10);x
+
+# sequencia de 1 at� o 10, de passo =1
+y<-seq(1,10,1);y
+
+# sequencia de 2 ate o 10 de passo 3
+z<-seq(1,10,1);z
+
+
+####Matrizes em R#####----------------------------------------------------------
+# comando matrix (fonte dos dados, numero de linhas, numero de colunas)
+x<-1:10
+mat1<-matrix(x,nrow = 2,ncol = 5)
+mat1
+
+# ou simplesmente 
+mat2<-matrix(x,2,5);mat2
+mat3<-matrix(x,5,2);mat3
+
+#Opera��es com Matrizes
+B<-mat2;A<-mat1;C<-mat3
+
+# produto matrix por ela mesma
+A*B
+
+# Produto matricial depende de nj=ni
+A%*%B
+
+#portanto
+A%*%C; C%*%A
+
+#ou ent�o usamos a transposta pra inverter ixj
+A%*%t(B); B%*%t(A)
+quadrada<-(B%*%t(A))
+
+#matriz inversa
+solve(quadrada)
+
+#Sistemas lineares matriciais
+xx<-solve(quadrada,t(quadrada)); xx
+
+#determinantes
+det(quadrada)
+
+#autovalor e autovetor
+ eigen(quadrada)
+ 
